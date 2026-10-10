@@ -11,18 +11,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WeatherApp">
+
+        <!-- Launcher Activity -->
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.WeatherApp"
-            android:windowSoftInputMode="adjustResize">
+            android:name=".NowWeatherActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Daily screen -->
+        <activity
+            android:name=".DailyWeatherActivity"
+            android:exported="false" />
+
+        <!-- Forecast screen -->
+        <activity
+            android:name=".ForecastActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>
