@@ -22,6 +22,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+// Daily weather values
 data class DailyModel(
     val dayName: String,
     val condition: String,
@@ -47,6 +48,7 @@ class DailyWeatherActivity : ComponentActivity() {
 @Composable
 fun DailyScreen(onNowClick: () -> Unit) {
 
+    // Placeholder 7-day forecast
     val items = listOf(
         DailyModel("Mon", "Overcast", 12, 5, R.drawable.ic_cloud),
         DailyModel("Tue", "Light Rain", 10, 6, R.drawable.ic_rain),
@@ -105,6 +107,7 @@ fun DailyScreen(onNowClick: () -> Unit) {
 @Composable
 fun DailyItem(item: DailyModel) {
 
+    // Temperature in Fahrenheit
     val highF = (item.highC * 9 / 5) + 32
     val lowF = (item.lowC * 9 / 5) + 32
 
@@ -121,7 +124,6 @@ fun DailyItem(item: DailyModel) {
             painter = painterResource(id = item.iconRes),
             contentDescription = null,
             modifier = Modifier.size(40.dp),
-            colorFilter = ColorFilter.tint(Color(0xFF7A7A7A))
         )
 
         Spacer(modifier = Modifier.width(16.dp))
@@ -133,6 +135,7 @@ fun DailyItem(item: DailyModel) {
 
         Spacer(modifier = Modifier.weight(1f))
 
+        // Celsius top + Fahrenheit bottom
         Column(horizontalAlignment = Alignment.End) {
             Text(text = "${item.highC}°C / ${item.lowC}°C", fontSize = 16.sp)
             Text(text = "${highF}°F / ${lowF}°F", fontSize = 14.sp)

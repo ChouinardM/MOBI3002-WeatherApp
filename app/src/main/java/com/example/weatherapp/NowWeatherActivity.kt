@@ -37,9 +37,11 @@ class NowWeatherActivity : ComponentActivity() {
 @Composable
 fun NowScreen(onDailyClick: () -> Unit) {
 
+    // Temperature in Celsius and Fahrenheit
     val tempC = 6
     val tempF = (tempC * 9 / 5) + 32
 
+    // Feels like in Celsius and Fahrenheit
     val feelsLikeC = 2
     val feelsLikeF = (feelsLikeC * 9 / 5) + 32
 
@@ -51,6 +53,7 @@ fun NowScreen(onDailyClick: () -> Unit) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
+        // Weather for location
         Text(
             text = "Halifax, Nova Scotia",
             fontSize = 24.sp,
